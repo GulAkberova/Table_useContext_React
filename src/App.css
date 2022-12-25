@@ -1,38 +1,230 @@
-.App {
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+body{
+  background-color: #556B2F;
+  color: white;
+}
+a{
+  color: white;
+}
+/* ___________________Header_____________________________ */
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+header ul {
+  display: flex;
+}
+header ul li{
+  margin: 0px 10px;
+}
+.home_div{
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* ______________Table________________________ */
+.table_div{
+  padding: 30px 40px;
+}
+/* ______________Table_Search________________________ */
+.table_search{
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+.table_search_mini{
+  width: 400px;
+  max-width: 100%;
+  padding:10px 10px;
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+
+}
+.table_search_mini input {
+  padding: 8px 0px;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  color: white;
+  margin-left: 10px;
+}
+.table_search_mini input::placeholder {
+  color: white;
+}
+/* _____________________All_TAble____________________________ */
+.table_bigdiv{
+  width: 100%;
+  height: 500px;
+  display: flex;
+  gap: 10px;
+}
+/* _____________________Main_TAble____________________________ */
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
   text-align: center;
 }
+#customers thead{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+}
+#customers td, #customers th {
+  border: 1px solid rgba(221, 221, 221, 0.204);
+  padding: 8px;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+#customers tr:hover {background-color: #7ba67113;}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  /* text-align: left; */
+  background-color: #7ba67113;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
+/* ________________________Table_add______________________________ */
+.table_add{
+  width: 500px;
+  height: 235px;
+  max-width: 100%;
+  border: 1px solid rgba(221, 221, 221, 0.204);
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+}
+.add_h1{
+  padding: 10px 0px;
+  display: flex;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+.add_input{
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px;
+}
+.add_input input{
+  padding: 9px 5px;
+  margin: 4px 0px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgba(221, 221, 221, 0.204);
+  color: white;
+  background-color: transparent;
+}
+.add_input input::placeholder{
+  color: rgba(255, 255, 255, 0.412);
+}
+.add_input button{
+  padding: 10px 0px;
+  margin: 10px 0px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: transparent;
+  border: 1px solid rgba(221, 221, 221, 0.204);
+  color: white;
+}
+/* _________________________Detail_______________________ */
+.detail_div{
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 19px;
+}
+.detail_div button{
+  padding: 10px 30px;
+  margin: 10px 0px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.309);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+ color: white;
+ cursor: pointer;
+}
+/* ___________________Favorite_________________ */
+.favori_div{
+  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.favori{
+  text-align: center;
+  padding: 20px;
+  border: 1px solid white;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+.favori button{
+  padding: 10px 30px;
+  margin: 10px 0px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.309);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+ color: white;
+ cursor: pointer;
+}
+.clear_div{
+  padding-left: 50px;
+  padding-top: 30px;
+
+}
+.clear_div button{
+  padding: 10px 30px;
+  margin: 10px 0px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.309);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+ color: white;
+ cursor: pointer;
+}
+/* _____________________Loading_________________________ */
+.loading_div{
+  width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+.lds-circle {
+  display: inline-block;
+  transform: translateZ(1px);
+  
+}
+.lds-circle > div {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  background: #fff;
+  animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+@keyframes lds-circle {
+  0%, 100% {
+    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
   }
-  to {
-    transform: rotate(360deg);
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(1800deg);
+    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+  }
+  100% {
+    transform: rotateY(3600deg);
   }
 }
