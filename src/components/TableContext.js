@@ -11,6 +11,8 @@ export const TableProvider = ({ children }) => {
   const[price,setPrice]=useState('')
   const[quantity, setQuantity]=useState('')
   const[loading,setLoading]=useState(false)
+  const[currentPage,setCurrentPage]=useState(1)
+  const[postsPerPage,setPosts]=useState(10)
 
   const values = {
     all,
@@ -29,6 +31,10 @@ export const TableProvider = ({ children }) => {
     setQuantity,
     loading,
     setLoading,
+    currentPage,
+    setCurrentPage,
+    postsPerPage,
+    setPosts
   };
   return (
     <tableContext.Provider value={values}>{children}</tableContext.Provider>

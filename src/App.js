@@ -6,8 +6,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Header from './components/Header';
 import Home from './components/Home'
-import Table from './components/Table';
 import Wishlist from './components/Wishlist';
+import Pagination from './components/Pagination';
 import Detail from './components/Detail';
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
 
   useEffect(()=>{
     setLoading(true)
-    fetch('https://northwind.vercel.app/api/products/')
+    fetch('https://northwind.vercel.app/api/products')
     .then(res=>res.json())
     .then(data=>{
       console.log(data)
@@ -29,8 +29,8 @@ function App() {
     <Header/>
     <Routes>
       <Route path='/' element={<Home/>}/>
-      <Route path='/table' element={<Table/>}/>
       <Route path='/wishlist' element={<Wishlist/>}/>
+      <Route path='/pagination' element={<Pagination/>}/>
       <Route path='/detail/:id' element={<Detail/>}/>
     </Routes>
      

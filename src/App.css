@@ -231,3 +231,21 @@ header ul li{
     transform: rotateY(3600deg);
   }
 }
+/* _______________________Pagination____________________ */
+.pagi{
+  display: flex;
+  align-items: center;
+}
+.pagi ul {
+  display: flex;
+}
+.pagi ul li{
+  margin: 10px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}

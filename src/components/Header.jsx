@@ -16,7 +16,7 @@ function Header() {
             <NavLink to={"/"}>Home</NavLink>
           </li>
           <li>
-            <NavLink to={"/table"}>Table</NavLink>
+            <NavLink to={"/pagination"}>Table</NavLink>
           </li>
           <li>
             <NavLink to={"/wishlist"}>

@@ -1,3 +1,4 @@
+
 import React, { useContext } from "react";
 import { tableContext } from "./TableContext";
 import { Link, useNavigate } from "react-router-dom";
@@ -5,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Swal from "sweetalert2";
 
-function Table() {
+function Pagination() {
   let {
     all,
     setAll,
@@ -21,6 +22,7 @@ function Table() {
     setPrice,
     loading,
     setLoading,
+    currentPage, setCurrentPage,postsPerPage,setPosts
   } = useContext(tableContext);
   let navigate = useNavigate();
   const handleDelete = (id) => {
@@ -82,6 +84,21 @@ function Table() {
    
   };
 
+  const indexOfLastPost=currentPage*postsPerPage;
+  const indexOfFirstPost = indexOfLastPost -postsPerPage;
+  const currentPosts = all.slice(indexOfFirstPost,indexOfLastPost)
+  console.log(currentPosts)
+
+  const pageNumber=[]
+   
+    for (let i=1; i<= Math.ceil(all.length/postsPerPage); i++){
+        pageNumber.push(i);
+      console.log(pageNumber)
+
+    }
+
+    const paginate=(pageNumber)=>setCurrentPage(pageNumber)
+  
  
 
   return (
@@ -115,8 +132,10 @@ function Table() {
               {loading ? (
               <div className="loading_div"> <div class="lds-circle"><div></div></div></div>
               ) : (
-                all &&
-                all
+                currentPosts &&
+
+        
+                currentPosts
                   ?.filter((m) => m.name.toLowerCase().includes(value))
                   .map((i, key) => {
                     return (
@@ -190,9 +209,21 @@ theme="colored"
             </div>
           </div>
         </div>
+        <div className="pagi">
+            <ul>
+                {
+                    pageNumber.map(number=>(
+                        <li key={number}>
+                            <a onClick={()=>paginate(number)}>
+                            {number}    
+                            </a></li>
+                    ))
+                }
+            </ul>
+        </div>
       </section>
     </>
   );
 }
 
-export default Table;
+export default Pagination;
